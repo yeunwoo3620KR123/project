@@ -11,6 +11,7 @@ function Regist() {
     const [year, setYear] = useState("");
     const [month, setMonth] = useState("");
     const [day, setDay] = useState("");
+    const [phone, setPhone] = useState("");
 
     //생년월일 핸들러
     const handleYearChange = (e) => setYear(e.target.value);
@@ -35,7 +36,8 @@ function Regist() {
                 pw:pw,
                 dob:dob,
                 name:name,
-                gender:gender
+                gender:gender,
+                phone:phone
             })
         })
         .then(res => res.json())
@@ -70,10 +72,13 @@ function Regist() {
                 
             <br />
 
-             성별 : 남성 <input type="radio" name="gender" value="male" onChange={(e)=>setGender(e.target.value)} />
-                    여성 <input type="radio" name="gender" value="female" onChange={(e)=>setGender(e.target.value)} />
+             성별 : 남성 <input type="radio" name="gender" value="M" onChange={(e)=>setGender(e.target.value)} />
+                    여성 <input type="radio" name="gender" value="F" onChange={(e)=>setGender(e.target.value)} />
            
             <br />
+             전화번호 : <input type="tel" pattern="010-[0-9]{4}-[0-9]{4}" placeholder="010-1234-5678" onChange={(e) => setPhone(e.target.value)} />
+
+             <br />
 
             <button onClick={regist}>회원가입</button>
 
