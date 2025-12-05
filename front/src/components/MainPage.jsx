@@ -8,6 +8,7 @@ function MainPage() {
     }
     return (
         <div>
+            <h1>로그인 이후 페이지</h1>
         <button onClick={settingsClcik}>회원정보 수정</button>
 
 

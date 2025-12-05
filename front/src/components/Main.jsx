@@ -11,6 +11,7 @@ function Main() {
    
     return (
         <div>
+            <h1>메인페이지</h1>
         <button onClick={loginClick}>로그인</button>
         <button onClick={registClick}>회원가입</button>
        
