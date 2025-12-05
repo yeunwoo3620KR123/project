@@ -8,16 +8,12 @@ function Main() {
     function registClick () {
         navigate('/regist')
     }
-    function settingsClcik () {
-        navigate('/settings')
-    }
+   
     return (
         <div>
         <button onClick={loginClick}>로그인</button>
         <button onClick={registClick}>회원가입</button>
-        <button onClick={settingsClcik}>회원정보 수정</button>
-
-
+       
         </div>
     )
 }

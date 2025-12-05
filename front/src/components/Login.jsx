@@ -19,7 +19,7 @@ function Login() {
         })
         const data = await res.json()
         if(data.result){
-            navigate('/',{state:{id:id}})
+            navigate('/mainpage',{state:{id:id}})
         }
         else{
             alert ("아이디 또는 비밀번호가 일치하지 않습니다")

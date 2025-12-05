@@ -13,7 +13,7 @@ app.use(express.json());
 
 // 여기 회원가입창
 app.post('/regist', async (req, res) => {
-    const { id, pw, dob, name, gender, phone } = req.body;
+    const { id, pw, nickname, dob, name, gender, phone } = req.body;
 
     try {
         // 아이디 중복 있는지 확인
@@ -27,8 +27,8 @@ app.post('/regist', async (req, res) => {
 
         // 회원 추가
         await pool.query(
-            'INSERT INTO users(id, pw, dob, name, gender, phone) VALUES(?,?,?,?,?,?)',
-            [id,pw,dob,name,gender,phone]
+            'INSERT INTO users(id, pw, nickname, dob, name, gender, phone) VALUES(?,?,?,?,?,?)',
+            [id,pw,nickname,dob,name,gender,phone]
         );
 
         res.json({ result : true });
@@ -68,6 +68,7 @@ app.put('/edit',async (req,res) => {
         old_user_id, // 기존에 있던 id
         new_user_id, // 새로 바꿀 id
         user_pw,
+        user_nickname,
         user_name,
         user_gender,
         user_dob,
@@ -89,8 +90,8 @@ app.put('/edit',async (req,res) => {
 
     // 정보 업데이트
 
-    await pool.query('UPDATE users SET id=?, pw=?, dob=?, name=?, gender=?, phone=? WHERE id=?',
-        [new_user_id, user_pw, user_dob, user_name, user_gender, user_phone , old_user_id]
+    await pool.query('UPDATE users SET id=?, pw=?, nickname=?, dob=?, name=?, gender=?, phone=? WHERE id=?',
+        [new_user_id, user_pw, user_nickname, user_dob, user_name, user_gender, user_phone , old_user_id]
     );
     res.send({"result":true});
 });

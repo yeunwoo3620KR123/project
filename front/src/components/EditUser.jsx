@@ -8,6 +8,7 @@ function EditUser() {
     const [userId, setUserId] = useState(""); // 기존 아이디
     const [newUserId, setNewUserId] = useState(""); // 새로 변경할 아이디
     const [pw, setPw] = useState("");
+    const [nickname, setNickname] = useState(""); 
     const [name, setName] = useState("");
     const [gender, setGender] = useState("");
     const [dob, setDob] = useState("");
@@ -29,6 +30,7 @@ function EditUser() {
                 old_user_id: userId,
                 new_user_id: newUserId || userId, // 새 아이디 혹은 새 아이디가 없으면 기존 아이디 사용
                 user_pw: pw,
+                user_nickname:nickname,
                 user_name: name,
                 user_gender: gender,
                 user_dob: dob,
@@ -51,7 +53,9 @@ return (
             <h2>회원정보 수정</h2>
             기존아이디 : <input value={userId} placeholder="기존아이디를 입력하세요" onChange={(e)=>setUserId(e.target.value)} /> <br />
 
-            새아이디 : <input value={newUserId} placeholder="새아이디를 입력하세요" onChange={(e)=>setNewUserId(e.target.value)} /> <br />
+            닉네임 : <input value={nickname} placeholder="변경할 닉네임을 입력하세요" onChange={(e)=>setNickname(e.target.value)} /> <br />
+
+            {/* 새아이디 : <input value={newUserId} placeholder="새아이디를 입력하세요" onChange={(e)=>setNewUserId(e.target.value)} /> <br /> */}
             
            
              비밀번호 : <input value={pw} placeholder="변경할 password를 입력하세요" onChange={(e)=>setPw(e.target.value)} /> <br />
