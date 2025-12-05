@@ -27,7 +27,7 @@ app.post('/regist', async (req, res) => {
 
         // 회원 추가
         await pool.query(
-            'INSERT INTO users(id, pw, nickname, dob, name, gender, phone) VALUES(?,?,?,?,?,?)',
+            'INSERT INTO users(id, pw, nickname, dob, name, gender, phone) VALUES(?,?,?,?,?,?,?)',
             [id,pw,nickname,dob,name,gender,phone]
         );
 
