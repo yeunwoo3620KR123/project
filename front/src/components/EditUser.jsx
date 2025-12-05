@@ -51,18 +51,17 @@ return (
             <div>
                 <h1>회원설정 페이지</h1>
             <h2>회원정보 수정</h2>
-            기존아이디 : <input value={userId} placeholder="기존아이디를 입력하세요" onChange={(e)=>setUserId(e.target.value)} /> <br />
+            아이디 : <input value={userId} placeholder="아이디를 입력하세요" onChange={(e)=>setUserId(e.target.value)} /> <br />
 
             닉네임 : <input value={nickname} placeholder="변경할 닉네임을 입력하세요" onChange={(e)=>setNickname(e.target.value)} /> <br />
 
             {/* 새아이디 : <input value={newUserId} placeholder="새아이디를 입력하세요" onChange={(e)=>setNewUserId(e.target.value)} /> <br /> */}
             
-           
+            
              비밀번호 : <input value={pw} placeholder="변경할 password를 입력하세요" onChange={(e)=>setPw(e.target.value)} /> <br />
             
              생년월일 :   <input value={dob} placeholder="YYYY-MM-DD" onChange={(e)=>setDob(e.target.value)}/> <br />
-                         
-                                  
+                                                           
              이름 : <input value={name} placeholder="성함을 입력하세요"onChange={(e)=>setName(e.target.value)} /> <br />
                 
              성별 : 남성 <input type="radio" name="gender" value="M" onChange={(e)=>setGender(e.target.value)} /> <br />

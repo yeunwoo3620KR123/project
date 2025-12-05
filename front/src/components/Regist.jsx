@@ -12,6 +12,7 @@ function Regist() {
     const [month, setMonth] = useState("");
     const [day, setDay] = useState("");
     const [phone, setPhone] = useState("");
+    const [nickname, setNickname] = useState("");
 
     //생년월일 핸들러
     const handleYearChange = (e) => setYear(e.target.value);
@@ -23,6 +24,27 @@ function Regist() {
 
     function regist() {
         
+        // 회원가입 기입란 공백 유효성 검사
+
+    if (!nickname) return alert("닉네임을 기입해주세요");
+    if (!id) return alert("아이디를 기입해주세요");
+    if (!pw) return alert("비밀번호를 기입해주세요");
+
+    if (!year)
+    return alert("태어난 연도를 기입해주세요");
+
+    if (!month)
+    return alert("태어난 월을 기입해주세요");
+
+    if (!day)
+    return alert("태어난 날을 기입해주세요");
+
+    if (!name) return alert("성함을 기입해주세요");
+    if (!gender) return alert("성별을 선택해주세요");
+    if (!phone) return alert("전화번호를 기입해주세요");
+
+
+
         // YYYY-MM-DD 형식으로 합치기
     const dob = `${year}-${month}-${day}`; 
 
@@ -37,7 +59,8 @@ function Regist() {
                 dob:dob,
                 name:name,
                 gender:gender,
-                phone:phone
+                phone:phone,
+                nickname:nickname
             })
         })
         .then(res => res.json())
@@ -55,6 +78,9 @@ function Regist() {
     return (
         <div>
             <h1>회원가입 페이지</h1>
+
+            닉네임 : <input placeholder="닉네임을 입력하세요" onChange={(e)=>setNickname(e.target.value)} />
+            <br /> 
 
              아이디 : <input placeholder="아이디를 입력하세요" onChange={(e)=>setId(e.target.value)} />
             <br />
