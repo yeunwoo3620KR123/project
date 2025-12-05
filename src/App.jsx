@@ -4,6 +4,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Main from './components/Main'
 import Login from './components/Login'
 import Regist from './components/Regist'
+import Settings from './components/Settings'
+import EditUser from './components/EditUser'
+import DeleteUser from './components/DeleteUser'
 
 function App() {
 
@@ -14,6 +17,11 @@ function App() {
     <Route path='/' element={<Main/>}/>
     <Route path='/login' element={<Login/>}/>
     <Route path='/regist' element={<Regist/>}/>
+    <Route path='/settings' element={<Settings/>}/>
+    <Route path='/settings/edit' element={<EditUser/>}/>
+    <Route path='/settings/delete' element={<DeleteUser/>}/>
+
+
     </Routes>
     </BrowserRouter>
   )
